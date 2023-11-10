@@ -10,8 +10,9 @@ setup: install-tailwind-standalone-cli
 
 css-watch:
 	@echo "Watching CSS..."
-	@tailwindcss -i ./main.css -o ./static/style.css --watch
+	@tailwindcss -i ./static/src/css/input.css -o ./static/src/css/style.min.css --watch --minify
 
-css-build:
+css-build: 
 	@echo "Building CSS..."
-	@tailwindcss -i ./main.css -o ./static/style.css
+	@tailwindcss -i ./static/src/css/input.css -o ./static/src/css/style.min.css --minify
+	@echo "CSS built successfully!"
